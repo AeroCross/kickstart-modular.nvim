@@ -51,4 +51,29 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- TODO: This should be in another file and imported here, to prevent merge conflicts.
+
+-- Custom keybinds
+-- Remove highlight of searched word
+vim.keymap.set('n', '<CR>', ':nohl<CR>')
+
+-- Paste replace visual selection without copying it.
+vim.keymap.set('v', 'p', '"_dP')
+
+-- Quickly highlight word under cursor (Conflicts with Git Hunk)
+vim.keymap.set('n', '<leader>h', '*N', { desc = '[H]ighlight under cursor' })
+
+-- "Find next" centres the viewport
+vim.keymap.set('n', 'n', 'nzz')
+
+-- "Find previous" centres the viewport
+vim.keymap.set('n', 'N', 'Nzz')
+
+-- Move to the beginning and end of line naturally
+vim.keymap.set('n', 'L', '$')
+vim.keymap.set('n', 'H', '^')
+
+-- Save quickly
+vim.keymap.set('n', '<leader>w', ':write<CR>', { desc = '[W]rite to File' })
+
 -- vim: ts=2 sts=2 sw=2 et
