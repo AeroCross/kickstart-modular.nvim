@@ -16,6 +16,6 @@ return {
 
     vim.keymap.set('n', '<leader>sJ', function()
       require('hop').hint_patterns { direction = directions.BEFORE_CURSOR, current_line_only = false }
-    end, { desc = '[J]ump to pattern before cursor' })
+    end, { desc = 'Jump to pattern before cursor' })
   end,
 }
